@@ -21,9 +21,9 @@ class Options(object):
         parser.add_argument('--g_lr', type=float, default=0.0001)
         parser.add_argument('--beta1', type=float, default=0.5)
         parser.add_argument('--beta2', type=float, default=0.9)
-        parser.add_argument('--d_iters', type=int, default=20, help='# d updates per g update; defaults to 1 if solver=bary_ot or gen=F')
         # w1 / w2 only
         parser.add_argument('--train_iters', type=int, default=5000)
+        parser.add_argument('--d_iters', type=int, default=20, help='# d updates per g update; defaults to 1 if solver=bary_ot')
         # bary-ot only (2 stages)
         parser.add_argument('--dual_iters', type=int, default=20000)
         parser.add_argument('--map_iters', type=int, default=20000)

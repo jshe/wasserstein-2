@@ -21,9 +21,9 @@ def get_loader(config):
 
 def get_mnist_loader(config, batch_size, train=True):
     tf = transforms.Compose([transforms.Scale(16),
-                              transforms.CenterCrop(16),
-                              transforms.ToTensor(),
-                              transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+                             transforms.CenterCrop(16),
+                             transforms.ToTensor(),
+                             transforms.Lambda(lambda x: 2*x-1)])
     mnist = datasets.MNIST(root=config.mnist_path, train=train, download=True, transform=tf)
     return RealDataGenerator(torch.utils.data.DataLoader(dataset=mnist,
                                                          batch_size=batch_size,
@@ -32,7 +32,7 @@ def get_mnist_loader(config, batch_size, train=True):
 
 def get_usps_loader(config, batch_size, train=True):
     tf = transforms.Compose([transforms.ToTensor(),
-                              transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+                             transforms.Lambda(lambda x: 2*x-1)])
     usps = USPS(root=config.usps_path, train=train, transform=tf)
     return RealDataGenerator(torch.utils.data.DataLoader(dataset=usps,
                                                          batch_size=batch_size,

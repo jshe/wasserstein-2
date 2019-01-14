@@ -29,7 +29,7 @@ class Options(object):
         parser.add_argument('--map_iters', type=int, default=20000)
 
         # data
-        parser.add_argument('--data', type=str, choices=['four-to-four', 'swissroll', 'checkerboard'], default='four-to-four')
+        parser.add_argument('--data', type=str, choices=['4gaussians', 'swissroll', 'checkerboard'], default='four-to-four')
 
         # networks
         parser.add_argument('--g_n_layers', type=int, default=3)

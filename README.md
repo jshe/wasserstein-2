@@ -21,11 +21,11 @@ tensorboardX (optional, remove dependency if not used)
 
 ```
 # 4 gaussians
-python main.py --solver=w2 --gan --data=4gaussians
+python main.py --solver=w2 --gen=1 --data=4gaussians
 # swissroll
-python main.py --solver=w2 --gan --data=swissroll
+python main.py --solver=w2 --gen=1 --data=swissroll
 # checkerboard
-python main.py --solver=w2 --gan --data=checkerboard
+python main.py --solver=w2 --gen=1 --data=checkerboard
 ```
 
 ### Multivariate Gaussian ⟶ MNIST (exp_mvg)

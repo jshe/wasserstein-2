@@ -17,22 +17,30 @@ tensorboardX (optional, remove dependency if not used)
 
 ## Experiments
 
-### 2D
+### 2D (exp_2d)
 
 ```
-
+# 4 gaussians
+python main.py --solver=w2 --gan --data=4gaussians
+# swissroll
+python main.py --solver=w2 --gan --data=swissroll
+# checkerboard
+python main.py --solver=w2 --gan --data=checkerboard
 ```
 
-### Multivariate Gaussian -> MNIST
+### Multivariate Gaussian ⟶ MNIST (exp_mvg)
 
 ```
-
+python main.py --solver=w2
 ```
 
-### Domain Adaptation (MNIST <-> USPS)
+### Domain Adaptation: MNIST ⟷ USPS (exp_da)
 
 ```
-
+# usps -> mnist
+python main.py --solver=w2 --direction=usps-mnist
+# mnist -> usps
+python main.py --solver=w2 --direction=mnist-usps
 ```
 ## Acknowledgments
 

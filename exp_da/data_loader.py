@@ -39,7 +39,6 @@ def get_usps_loader(config, batch_size, train=True):
                                                          shuffle=True,
                                                          num_workers=4))
 
-
 def get_data(config, train=True):
     if train:
         if config.direction == 'usps-mnist':

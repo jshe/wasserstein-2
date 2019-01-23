@@ -19,11 +19,11 @@ class Options(object):
         parser.add_argument('--batch_size', type=int, default=512)
         parser.add_argument('--d_lr', type=float, default=0.0005)
         parser.add_argument('--g_lr', type=float, default=0.0001)
-        parser.add_argument('--beta1', type=float, default=0.5)
-        parser.add_argument('--beta2', type=float, default=0.9)
+        parser.add_argument('--beta1', type=float, default=0.9)
+        parser.add_argument('--beta2', type=float, default=0.999)
         # w1 / w2 only
         parser.add_argument('--train_iters', type=int, default=5000)
-        parser.add_argument('--d_iters', type=int, default=20, help='# d updates per g update; defaults to 1 if solver=bary_ot')
+        parser.add_argument('--d_iters', type=int, default=5, help='# d updates per g update; defaults to 1 if solver=bary_ot')
         # bary-ot only (2 stages)
         parser.add_argument('--dual_iters', type=int, default=20000)
         parser.add_argument('--map_iters', type=int, default=20000)
@@ -33,7 +33,7 @@ class Options(object):
 
         # networks
         parser.add_argument('--g_n_layers', type=int, default=3)
-        parser.add_argument('--d_n_layers', type=int, default=2)
+        parser.add_argument('--d_n_layers', type=int, default=3)
         parser.add_argument('--n_hidden', type=int, default=128)
         parser.add_argument('--g_norm', type=str, choices=['none', 'batch'], default='batch', help='normalization (generator only)')
         parser.add_argument('--activation', type=str, choices=['relu', 'elu'], default='relu', help='activation function')
@@ -42,7 +42,7 @@ class Options(object):
         # w2 only
         parser.add_argument('--ineq', type=int, default=1, choices=[0, 1], help='inequality regularization for (x, y)')
         parser.add_argument('--ineq_interp', type=int, default=1, choices=[0, 1], help='inequality regularization for interpolations between x and y')
-        parser.add_argument('--eq_phi', type=int, default=0, choices=[0, 1], help='equality regularization for (x, Tx)')
+        parser.add_argument('--eq_phi', type=int, default=1, choices=[0, 1], help='equality regularization for (x, Tx)')
         parser.add_argument('--eq_psi', type=int, default=-1, choices=[-1, 0, 1], help='equality regularization for (y, Ty); -1 defaults to eq_phi')
         parser.add_argument('--lambda_ineq', type=float, default=200, help='weight of ineq regularizer')
         parser.add_argument('--lambda_eq', type=float, default=-1, help='weight of eq regularizer; < 0 defaults to lambda_ineq')

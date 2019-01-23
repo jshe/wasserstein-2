@@ -1,4 +1,4 @@
-# W2GAN: Recovering an Optimal Map with a GAN
+# Adversarial Computation of Optimal Transport Maps
 
 Code accompanying paper of the same name.
 

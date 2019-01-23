@@ -17,15 +17,26 @@ tensorboardX (optional, remove dependency if not used)
 
 ## Experiments
 
-### 2D (exp_2d)
+### 2D/OT (exp_2d)
 
 ```
+# W2-GAN
 # 4 gaussians
 python main.py --solver=w2 --gen=1 --data=4gaussians
 # swissroll
 python main.py --solver=w2 --gen=1 --data=swissroll
 # checkerboard
 python main.py --solver=w2 --gen=1 --data=checkerboard
+
+# W2-OT
+# 4 gaussians
+python main.py --solver=w2 --gen=0 --data=4gaussians --train_iters=20000
+# swissroll
+python main.py --solver=w2 --gen=0 --data=swissroll --train_iters=20000
+# checkerboard
+python main.py --solver=w2 --gen=0 --data=checkerboard --train_iters=20000
+```
+
 ```
 
 ### Multivariate Gaussian ⟶ MNIST (exp_mvg)

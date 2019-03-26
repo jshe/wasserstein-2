@@ -7,6 +7,7 @@ import glob
 
 from torch.backends import cudnn
 from data_loader import get_loader, get_data
+from w1_model import W1
 from w2_model import W2
 from bot_model import BaryOT
 from options import Options
@@ -43,7 +44,9 @@ def main():
 
         ## initialize data loaders/generators & model
         r_loader, z_loader = get_loader(config)
-        if config.solver == 'w2':
+        if config.solver == 'w1':
+            model = W1(config, r_loader, z_loader)
+        elif config.solver == 'w2':
             model = W2(config, r_loader, z_loader)
         elif config.solver == 'bary_ot':
             model = BaryOT(config, r_loader, z_loader)

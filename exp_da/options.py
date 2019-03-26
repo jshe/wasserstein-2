@@ -11,7 +11,7 @@ class Options(object):
         parser.add_argument('--exp_name', type=str, default='test_run')
         parser.add_argument('--exp_dir', type=str, default='.')
         parser.add_argument('--use_tbx', type=int, default=1, help='use tensorboardX')
-        parser.add_argument('--solver', type=str, choices=['none', 'w2', 'bary_ot'], default='w2')
+        parser.add_argument('--solver', type=str, choices=['none', 'w2', 'w1', 'bary_ot'], default='w2')
 
         # training
         parser.add_argument('--batch_size', type=int, default=64)

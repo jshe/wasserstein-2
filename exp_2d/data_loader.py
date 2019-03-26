@@ -5,7 +5,7 @@ import numpy as np
 
 def get_loader(config):
     """builds and returns generators for 2D source & target datasets."""
-    if config.data == 'four-to-four':
+    if config.data == '4gaussians':
         return GaussiansGenerator(config.batch_size, scale=1.0, eps_noise=0.1),\
             GaussiansGenerator(config.batch_size, eps_noise=0.1)
 
